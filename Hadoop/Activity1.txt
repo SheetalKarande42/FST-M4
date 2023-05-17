@@ -1,0 +1,16 @@
+root@5a4ed1c500b3:/# vim txtFile.txt
+root@5a4ed1c500b3:/# vim csvFile.csv
+root@5a4ed1c500b3:/# hdfs dfs -mkdir /user/sheetal
+root@5a4ed1c500b3:/# hdfs dfs -put C:/Users/01695Z744/Documents/FSTReskilling/Module4/txtFile.txt /user/sheetal
+put: `/Users/01695Z744/Documents/FSTReskilling/Module4/txtFile.txt': No such file or directory
+root@5a4ed1c500b3:/# hdfs dfs -put txtFile.txt /user/sheetal
+root@5a4ed1c500b3:/# hdfs dfs -put csvFile.csv /user/sheetal
+root@5a4ed1c500b3:/# hdfs dfs -ls /user/sheetal
+Found 2 items
+-rw-r--r--   1 root supergroup         33 2023-05-09 06:48 /user/sheetal/csvFile.csv
+-rw-r--r--   1 root supergroup         28 2023-05-09 06:48 /user/sheetal/txtFile.txt
+root@5a4ed1c500b3:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/sheetal/txtFile.txt
+type:regular file permissions:644 root:supergroup size:28 name:txtFile.txt
+root@5a4ed1c500b3:/# hdfs dfs -stat "type:%F permissions:%a %u:%g size:%b name:%n" /user/sheetal/csvFile.csv
+type:regular file permissions:644 root:supergroup size:33 name:csvFile.csv
+root@5a4ed1c500b3:/#
